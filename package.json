@@ -1,7 +1,7 @@
 {
-  "name": "react-i18n-kraken-test",
+  "name": "kraken-tests",
   "version": "0.1.0",
-  "description": "Testbed for getting i18n for react (using kraken).",
+  "description": "Testbed for kraken projects",
   "author": "TheIronDeveloper",
   "main": "index.js",
   "scripts": {

@@ -1,3 +1,3 @@
-# react-i18n-kraken-test
+# kraken-test
 
-Testbed for getting i18n for react (using kraken).
+Testbed for getting kraken projects.
