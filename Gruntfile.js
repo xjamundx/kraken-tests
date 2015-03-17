@@ -6,6 +6,8 @@ module.exports = function (grunt) {
     // Require-Bundle (Requiring babel first, then requirejs)
     grunt.registerTask('require-bundle', ['babel', 'requirejs']);
 
+    grunt.loadNpmTasks('grunt-makara-amdify');
+
     // Load the project's grunt tasks from a directory
     require('grunt-config-dir')(grunt, {
         configDir: require('path').resolve('tasks')
