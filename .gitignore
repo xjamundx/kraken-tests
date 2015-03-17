@@ -32,3 +32,4 @@ node_modules
 
 # Project Specific
 public/js/app.js
+public/components

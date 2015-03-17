@@ -14,7 +14,8 @@ module.exports = function requirejs(grunt) {
                 dir: '.build/js',
                 optimize: 'uglify',
                 paths: {
-                    'react': '../components/react/react'
+                    react: '../components/react/react',
+                    'react-intl': '../components/react-intl/dist/react-intl'
                 },
                 modules: [
                     { name: 'app' }

@@ -3,29 +3,41 @@
 
 requirejs.config({
     paths: {
-        react: '/components/react/react'
+        react: 'react',
+        'react-intl': 'react-intl'
+    },
+    shim: {
+        react: {
+            exports: 'React'
+        },
+        "react-globalizer": {
+            deps: ["react"]
+        },
+        'react-intl': {
+            deps: ['react-globalizer'],
+            exports: 'ReactIntlMixin'
+        }
     }
 });
 
-
-require(['react'], function (React) {
+require(['react', 'react-intl'], function (React, ReactIntl) {
 
     var app = {
         initialize: function () {
-            // Your code here
+
             var Test = React.createClass({
+
                 render: function() {
                     return (<div>
                         Non localized react content here
+
                     </div>);
                 }
             });
 
             React.render(<Test />, document.getElementById('ReactContent'));
-
         }
     };
 
     app.initialize();
-
 });
