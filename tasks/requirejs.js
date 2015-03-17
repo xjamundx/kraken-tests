@@ -2,6 +2,7 @@
 
 
 module.exports = function requirejs(grunt) {
+
 	// Load task
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
 
@@ -12,6 +13,9 @@ module.exports = function requirejs(grunt) {
                 baseUrl: 'public/js',
                 dir: '.build/js',
                 optimize: 'uglify',
+                paths: {
+                    'react': '../components/react/react'
+                },
                 modules: [
                     { name: 'app' }
                 ]
