@@ -20,22 +20,25 @@ requirejs.config({
     }
 });
 
-require(['react', 'react-intl'], function (React, ReactIntl) {
+require(['react', 'react-intl', '../en-US/_languagepack.js'], function (React, ReactIntl) {
 
     var app = {
         initialize: function () {
 
-            var Test = React.createClass({
+            require(['_languagepack'], function(languagePack){
 
-                render: function() {
-                    return (<div>
-                        Non localized react content here
+                var Test = React.createClass({
 
-                    </div>);
-                }
+                    render: function() {
+                        return (<div>
+                            Non localized react content here
+
+                        </div>);
+                    }
+                });
+
+                React.render(<Test />, document.getElementById('ReactContent'));
             });
-
-            React.render(<Test />, document.getElementById('ReactContent'));
         }
     };
 
