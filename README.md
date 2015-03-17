@@ -10,3 +10,13 @@ Testbed for getting kraken projects.
 npm install
 bower install
 ```
+
+
+23. Glossary (Need to add docs)
+
+```
+_languagePack
+makara-(amdifiy||browserify)
+requirejs
+react-intl
+```

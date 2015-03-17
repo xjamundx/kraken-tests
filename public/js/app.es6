@@ -20,24 +20,48 @@ requirejs.config({
     }
 });
 
-require(['react', 'react-intl', '../en-US/_languagepack.js'], function (React, ReactIntl) {
+/**
+ * This is following Aria's example here: https://github.com/aredridel/womp/blob/new-content-and-react/public/js/app.jsx
+ *
+ * Much hard coding is going on. Need to fix. Such wow.
+ */
+
+var userLang = 'en-US'; // or de-DE
+
+require(['react', 'react-intl', '../'+userLang+'/_languagepack.js'], function (React, ReactIntl) {
 
     var app = {
         initialize: function () {
 
-            require(['_languagepack'], function(languagePack){
+            // By requiring /en-US/_languagepack, it defines _languagepack with {en-US: {...}}.
+            require(['_languagepack'], function(languagePack) {
+
+                var context = {
+                    locales: [userLang],
+                    messages: languagePack[userLang]['index.properties']
+                };
 
                 var Test = React.createClass({
 
+                    // integrate yahoo's react-intl stuff
+                    mixins: [ReactIntlMixin],
+
                     render: function() {
+                        console.log(this);
                         return (<div>
-                            Non localized react content here
+                            <p>{this.formatMessage(this.getIntlMessage('greeting'), {
+                                      name: "World"
+                                  })}</p>
 
                         </div>);
                     }
                 });
 
-                React.render(<Test />, document.getElementById('ReactContent'));
+                // react-intl depends on knowing some context from _languagepack
+                React.render(
+                    <Test {...context} />,
+                    document.getElementById('ReactContent')
+                );
             });
         }
     };
