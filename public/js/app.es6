@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import ReactIntlMixin from 'react-intl';
+import ReactIntl from 'react-intl';
 import languagePack from '_languagepack';
 
 let userLang = 'en-US';
@@ -18,7 +18,7 @@ let context = {
 let Test = React.createClass({
 
     // integrate yahoo's react-intl stuff
-    mixins: [ReactIntlMixin],
+    mixins: [ReactIntl.IntlMixin],
 
     render: function() {
         return (<div>

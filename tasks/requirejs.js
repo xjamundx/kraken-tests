@@ -12,19 +12,10 @@ module.exports = function requirejs(grunt) {
                 dir: '.build/app',
                 baseUrl: 'public/js',
                 optimize: 'none',
-                shim: {
-                    'react-global': {
-                        deps: ['react']
-                    },
-                    'react-intl': {
-                        deps: ['react-global'],
-                        exports: 'ReactIntlMixin'
-                    }
-                },
                 paths: {
                     '_languagepack': '../../.build/en-US/_languagepack',
                     'react': '../components/react/react',
-                    'react-intl': '../components/react-intl/dist/react-intl'
+                    'react-intl': 'lib/react-intl.amd'
                 },
                 modules: [{
                     name: 'app',
