@@ -5,14 +5,19 @@ Testbed for getting kraken projects.
 
 ## React-i18n
 
-1. Setup
+### Setup
 ```
 npm install
 bower install
+node server.js
 ```
 
+### Usage
+```
+grunt build
+```
 
-23. Glossary (Need to add docs)
+### Glossary (Need to add docs)
 
 ```
 _languagePack
