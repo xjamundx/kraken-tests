@@ -1,8 +1,3 @@
-/**
- * This is a hack to address react-intl's assumption of window.React.
- * Source: https://github.com/yahoo/react-intl/issues/4#issuecomment-75747028
- */
-
 (function (window) {
     var r;
 
@@ -13,6 +8,7 @@
     } else {
         throw "RequireJS is not loaded!";
     }
+
 
     window.React = r.s.contexts["_"].defined.react;
 })(this);
