@@ -5,7 +5,8 @@ module.exports = function babel(grunt) {
     // Options
     return {
         options: {
-            sourceMap: false
+            sourceMap: false,
+            modules: "amd"
         },
         dist: {
             files: {

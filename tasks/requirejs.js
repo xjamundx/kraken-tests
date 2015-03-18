@@ -1,6 +1,5 @@
 'use strict';
 
-
 module.exports = function requirejs(grunt) {
 
 	// Load task
@@ -10,16 +9,18 @@ module.exports = function requirejs(grunt) {
 	return {
         build: {
             options: {
+                dir: '.build/app',
                 baseUrl: 'public/js',
-                dir: '.build/js',
-                optimize: 'uglify',
+                optimize: 'none',
                 paths: {
-                    react: '../components/react/react',
-                    'react-intl': '../components/react-intl/dist/react-intl'
+                    '_languagepack': '../../.build/en-US/_languagepack',
+                    'react': '../components/react/react',
+                    'react-intl': 'lib/react-intl.amd'
                 },
-                modules: [
-                    { name: 'app' }
-                ]
+                modules: [{
+                    name: 'app',
+                    exclude: ['_languagepack']
+                }]
             }
         }
 	};
